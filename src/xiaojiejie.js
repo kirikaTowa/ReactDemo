@@ -32,6 +32,14 @@ class Xiaojiejie extends Component {
                     {
                         this.state.list.map((Item, index) => {
                             return (
+                            //     <li
+                            //     key={index + Item}
+                            //     /* 删除多加个index标识*/
+                            //     onClick={this.deleteItem.bind(this, index)}  
+                            //     dangerouslySetInnerHTML={{__html:Item}}/* 有两个大括号，红色的明显是jsx语法，里面的大括号表示一个对象 */
+                            //     >
+                            //     {/*{Item}   注释掉，标签内使用dangerouslySetInnerHTML声明*/}
+                            // </li>
                                 <XiaojiejieItemss />
                             )
                         })
