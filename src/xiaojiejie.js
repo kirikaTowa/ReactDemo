@@ -18,6 +18,7 @@ class Xiaojiejie extends Component {
 
 
     render() { //jsx
+        console.log("main-render")
         return (//括号换行
             <Fragment> {/* 减少层级 */}
                 <div>

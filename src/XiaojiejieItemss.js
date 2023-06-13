@@ -9,7 +9,17 @@ class XiaojiejieItemss  extends Component { //cc
         this.handleClick=this.handleClick.bind(this)//在构造方法中就绑定 省的循环里蛋疼
     }
 
+    //解決子組件非必要刷新问题
+    shouldComponentUpdate(nextProps){
+        if(nextProps.content !== this.props.content){
+            return true
+        }else{
+            return false
+        }
+    }
+
     render() { 
+        console.log("child-render")
         return ( 
             //传递的属性
             <li onClick={this.handleClick}>
@@ -24,6 +34,7 @@ class XiaojiejieItemss  extends Component { //cc
         //console.log("free hug"+this.props.contentIndex)
         this.props.deleteTarget(this.props.ind)
     }
+
 
 
 }
