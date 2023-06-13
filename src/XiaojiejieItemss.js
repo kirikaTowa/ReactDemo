@@ -16,6 +16,7 @@ class XiaojiejieItemss  extends Component { //cc
     }
 
     handleClick(){
+        //this.props.list=[]
         //console.log("free hug"+this.props.contentIndex)
         this.props.deleteTarget(this.props.ind)
     }

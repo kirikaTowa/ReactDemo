@@ -45,6 +45,7 @@ class Xiaojiejie extends Component {
                                 content={Item}
                                 contentIndex={index} 
                                 //再写个属性处理删除事件  该条目的
+                                //list={this.state.list}
                                 deleteTarget={this.deleteItem.bind(this)}
                                 />
                             )
