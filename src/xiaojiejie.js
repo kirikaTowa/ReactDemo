@@ -19,7 +19,7 @@ class Xiaojiejie extends Component {
 
     componentDidMount(){
         //axios获取远端数据  放在render中渲染一次拉取一次 axios链式回调
-        axios.post('https://juejin.cn/')
+        axios.post('https://juejin.cn/spost/7244018340880318522')
         .then((res)=>{console.log('axios 获取数据成功:'+JSON.stringify(res))  })
         .catch((error)=>{console.log('axios 获取数据失败'+error)})
     }

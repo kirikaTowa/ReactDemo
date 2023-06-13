@@ -34,9 +34,6 @@ class XiaojiejieItemss  extends Component { //cc
         //console.log("free hug"+this.props.contentIndex)
         this.props.deleteTarget(this.props.ind)
     }
-
-
-
 }
 
 
