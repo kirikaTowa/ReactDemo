@@ -12,15 +12,20 @@ class Xiaojiejie extends Component {
         //state中 定义组件所需要的数据   
         this.state = {
             inputValue: "",
-            list: ['鱼香肉丝', '香菇滑鸡']
+            list: []
         }
 
     }
 
     componentDidMount(){
         //axios获取远端数据  放在render中渲染一次拉取一次 axios链式回调
-        axios.post('https://juejin.cn/spost/7244018340880318522')
-        .then((res)=>{console.log('axios 获取数据成功:'+JSON.stringify(res))  })
+        axios.get('https://mock.mengxuegu.com/mock/64882955ed3be37af65f1e59/reactdemo/foodlist')
+        .then((res)=>{
+            console.log('axios 获取数据成功:'+JSON.stringify(res))  
+            this.setState({
+                list:res.data.data
+            })
+        } )
         .catch((error)=>{console.log('axios 获取数据失败'+error)})
     }
 
@@ -56,7 +61,7 @@ class Xiaojiejie extends Component {
                             // </li>
                                 <XiaojiejieItemss 
                                 key={index + Item}
-                                //content={Item}
+                                content={Item}
                                 contentIndex={index} 
                                 //再写个属性处理删除事件  该条目的
                                 //list={this.state.list}
