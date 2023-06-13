@@ -40,7 +40,13 @@ class Xiaojiejie extends Component {
                             //     >
                             //     {/*{Item}   注释掉，标签内使用dangerouslySetInnerHTML声明*/}
                             // </li>
-                                <XiaojiejieItemss />
+                                <XiaojiejieItemss 
+                                key={index + Item}
+                                content={Item}
+                                contentIndex={index} 
+                                //再写个属性处理删除事件  该条目的
+                                deleteTarget={this.deleteItem.bind(this)}
+                                />
                             )
                         })
                     }
