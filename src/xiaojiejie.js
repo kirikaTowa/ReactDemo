@@ -25,10 +25,16 @@ class Xiaojiejie extends Component {
                      *  大括号里放js代码
                      *  value={this.state.inputValue} 进行数据绑定，此时input框无法输入因为没进行事件绑定
                      * */}
-                    <input className='inputStyle' value={this.state.inputValue} onChange={this.inputChange.bind(this)} /> {/* .bind(this)绑定方法 */}
+                    <input 
+                    className='inputStyle' 
+                    value={this.state.inputValue} 
+                    onChange={this.inputChange.bind(this)} 
+                    ref ={input=> {this.input=input}}//es6语法 传递input参数
+
+                    /> {/* .bind(this)绑定方法 */}
                     <button onClick={this.addList.bind(this)}> 增加服务 </button>{/* 绑定事件 */}
                 </div>
-                <ul>{/* 改成从state里取数据  JSX用大括号通过this.state.list.mao进行循环  里面要写个return*/}
+                <ul  ref={(ul)=>{this.ul=ul}}>{/* 改成从state里取数据  JSX用大括号通过this.state.list.mao进行循环  里面要写个return*/}
                     {
                         this.state.list.map((Item, index) => {
                             return (
@@ -56,15 +62,22 @@ class Xiaojiejie extends Component {
         )
     }
 
-    //事件绑定 
-    inputChange(el) { //定义接受一个参数
-        console.log(el.target.value);//取得打印值
-        // this.state.inputValue=el.tatget.value //问题1. 直接写会报错  this指向错误，当前为空
-        //问题2.不能直接等于赋值，得通过setState方法和小程序一样
-        this.setState({
-            inputValue: el.target.value
-        })
-    }
+    // //事件绑定 
+    // inputChange(el) { //定义接受一个参数
+    //     console.log(el.target.value);//取得打印值
+    //     // this.state.inputValue=el.tatget.value //问题1. 直接写会报错  this指向错误，当前为空
+    //     //问题2.不能直接等于赋值，得通过setState方法和小程序一样
+    //     this.setState({
+    //         inputValue: el.target.value
+    //     })
+    // }
+
+        //事件绑定 
+        inputChange() { //定义接受一个参数
+            this.setState({
+                inputValue: this.input.value
+            })
+        }
 
     //增加服务的按钮响应方法
     addList() {
@@ -72,8 +85,9 @@ class Xiaojiejie extends Component {
             list: [...this.state.list, this.state.inputValue],/* es6 ...扩展运算符，相当于一个list数组中使用这个语句把原this.state.list取出来值放到前面 */
             //如果想清空原输入框
             inputValue: ''//单引号空字符
+        },()=>{
+            console.log(this.ul.querySelectorAll('li').length)//獲取所有元素
         })
-
     }
 
     //删除单项服务
