@@ -49,8 +49,6 @@ XiaojiejieItemss.propTypes={
 
 XiaojiejieItemss.defaultProps={
     content:"月海",//必传属性
-    deleteItem:PropTypes.func,
-    index:PropTypes.number
 }
 
 export default XiaojiejieItemss;
