@@ -2,6 +2,7 @@ import Item from 'antd/es/list/Item';
 import React, { Component, Fragment } from 'react'
 import './style.css'
 import XiaojiejieItemss from './XiaojiejieItemss';
+import axios from 'axios';
 
 //声明一个类继承组件
 class Xiaojiejie extends Component {
@@ -16,6 +17,12 @@ class Xiaojiejie extends Component {
 
     }
 
+    componentDidMount(){
+        //axios获取远端数据  放在render中渲染一次拉取一次 axios链式回调
+        axios.post('https://juejin.cn/')
+        .then((res)=>{console.log('axios 获取数据成功:'+JSON.stringify(res))  })
+        .catch((error)=>{console.log('axios 获取数据失败'+error)})
+    }
 
     render() { //jsx
         console.log("main-render")
