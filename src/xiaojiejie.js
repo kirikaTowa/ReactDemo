@@ -42,7 +42,7 @@ class Xiaojiejie extends Component {
                             // </li>
                                 <XiaojiejieItemss 
                                 key={index + Item}
-                                content={Item}
+                                //content={Item}
                                 contentIndex={index} 
                                 //再写个属性处理删除事件  该条目的
                                 //list={this.state.list}

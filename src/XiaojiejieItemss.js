@@ -1,4 +1,6 @@
 import React, { Component } from 'react'; //imrc
+import PropTypes from 'prop-types';
+
 class XiaojiejieItemss  extends Component { //cc
 
     //这个其实快速生成的时候会有的
@@ -10,7 +12,9 @@ class XiaojiejieItemss  extends Component { //cc
     render() { 
         return ( 
             //传递的属性
-            <li onClick={this.handleClick}>{this.props.content}</li>
+            <li onClick={this.handleClick}>
+                {this.props.content} 测试连接-{this.props.content}
+             </li>
          );
          
     }
@@ -23,4 +27,19 @@ class XiaojiejieItemss  extends Component { //cc
 
 
 }
+
+
+XiaojiejieItemss.propTypes={
+    content:PropTypes.string.isRequired,//必传属性
+    deleteItem:PropTypes.func,
+    index:PropTypes.number
+}
+
+
+XiaojiejieItemss.defaultProps={
+    content:"月海",//必传属性
+    deleteItem:PropTypes.func,
+    index:PropTypes.number
+}
+
 export default XiaojiejieItemss;
