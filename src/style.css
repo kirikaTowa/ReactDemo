@@ -1,2 +1,6 @@
 .inputStyle{ border:3px solid #ae7000}
 
+/* 1.5s缓动动画 先慢后快  */
+.show{opacity: 1; transition: all 1.5s ease-in;}
+
+.hide{opacity: 0;transition: all 1.5s ease-in;}

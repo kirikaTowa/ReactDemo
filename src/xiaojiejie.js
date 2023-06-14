@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react'
 import './style.css'
 import XiaojiejieItemss from './XiaojiejieItemss';
 import axios from 'axios';
+import Animate from './Animate';
 
 //声明一个类继承组件
 class Xiaojiejie extends Component {
@@ -71,6 +72,7 @@ class Xiaojiejie extends Component {
                         })
                     }
                 </ul>
+                <Animate/>
             </Fragment>
         )
     }
