@@ -4,7 +4,7 @@
 .show{opacity: 1; transition: all 1.5s ease-in;}
 
 /*.hide{opacity: 0;transition: all 1.5s ease-in;}*/
-
+/* :后要紧跟 不能加空格    动画结束后会停在第一帧，forwards可以解决*/
 .hide{animation:hide-item 2s ease-in  forwards;}
 
 /* 定义帧动画及帧节点 */
@@ -21,4 +21,29 @@
         opacity:0;
         color: rgb(144, 15, 230);
     }
+}
+
+
+/* 使用Transition */
+.animate-test-enter{
+    opacity: 0;
+}
+.animate-test-enter-active{
+    opacity: 1;
+    transition: opacity 2000ms;
+
+}
+.animate-test-enter-done{
+    opacity: 1;
+}
+.animate-test-exit{
+    opacity: 1;
+}
+.animate-test-exit-active{
+    opacity: 0;
+    transition: opacity 2000ms;
+
+}
+.animate-test-exit-done{
+    opacity: 0;
 }
